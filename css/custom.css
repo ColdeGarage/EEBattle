@@ -1,0 +1,23 @@
+body {
+	width: 90%;
+	margin: auto;
+}
+
+.bg-black {
+	background-color: black;
+}
+
+h1 {
+	font-size: 2.5em;
+}
+
+.squad {
+	color: #F80000;
+	-webkit-text-stroke: 0.001em #FFF;
+	font-family: "Rye", monospace;	
+	margin-right: 10px;
+}
+
+td.team{
+	text-align: center;
+}

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>EEBattle</title>
+	<link rel="stylesheet" href="css/odometer-theme-slot-machine.css">
+	<link rel="stylesheet" href="css/custom.css">
+	<script src="js/odometer.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body class="bg-black">
+	<table width="100%">
+		<tr>
+			<td width="20%" class="team">
+				<h1>
+					<span class="squad">Team 1</span>
+				</h1>
+			</td>
+			<td width="30%" class="money">
+				<h1>
+					<span class="odometer" id="squad1"></span>
+				</h1>
+			</td>
+			<td width="20%" class="team">
+				<h1>
+					<span class="squad">Team 7</span>
+				</h1>
+			</td>
+			<td width="30%" class="money">
+				<h1>
+					<span class="odometer" id="squad7"></span>
+				</h1>
+			</td>
+		</tr>
+		<tr>
+			<td width="20%" class="team">
+				<h1>
+					<span class="squad">Team 2</span>
+				</h1>
+			</td>
+			<td width="30%" class="money">
+				<h1>
+					<span class="odometer" id="squad2"></span>
+				</h1>
+			</td>
+			<td width="20%" class="team">
+				<h1>
+					<span class="squad">Team 8</span>
+				</h1>
+			</td>
+			<td width="30%" class="money">
+				<h1>
+					<span class="odometer" id="squad8"></span>
+				</h1>
+			</td>
+		</tr>
+		<tr>
+			<td width="20%" class="team">
+				<h1>
+					<span class="squad">Team 3</span>
+				</h1>
+			</td>
+			<td width="30%" class="money">
+				<h1>
+					<span class="odometer" id="squad3"></span>
+				</h1>
+			</td>
+			<td width="20%" class="team">
+				<h1>
+					<span class="squad">Team 9</span>
+				</h1>
+			</td>
+			<td width="30%" class="money">
+				<h1>
+					<span class="odometer" id="squad9"></span>
+				</h1>
+			</td>
+		<tr>
+			<td width="20%" class="team">
+				<h1>
+					<span class="squad">Team 4</span>
+				</h1>
+			</td>
+			<td width="30%" class="money">
+				<h1>
+					<span class="odometer" id="squad4"></span>
+				</h1>
+			</td>
+			<td width="20%" class="team">
+				<h1>
+					<span class="squad">Team 10</span>
+				</h1>
+			</td>
+			<td width="30%" class="money">
+				<h1>
+					<span class="odometer" id="squad10"></span>
+				</h1>
+			</td>
+		<tr>
+			<td width="20%" class="team">
+				<h1>
+					<span class="squad">Team 5</span>
+				</h1>
+			</td>
+			<td width="30%" class="money">
+				<h1>
+					<span class="odometer" id="squad5"></span>
+				</h1>
+			</td>
+			<td width="20%" class="team">
+				<h1>
+					<span class="squad">Team 11</span>
+				</h1>
+			</td>
+			<td width="30%" class="money">
+				<h1>
+					<span class="odometer" id="squad11"></span>
+				</h1>
+			</td>
+		</tr>
+		<tr>
+			<td width="20%" class="team">
+				<h1>
+					<span class="squad">Team 6</span>
+				</h1>
+			</td>
+			<td width="30%" class="money">
+				<h1>
+					<span class="odometer" id="squad6"></span>
+				</h1>
+			</td>
+			<td width="20%" class="team">
+				<h1>
+					<span class="squad">Team 12</span>
+				</h1>
+			</td>
+			<td width="30%" class="money">
+				<h1>
+					<span class="odometer" id="squad12"></span>
+				</h1>
+			</td>
+		</tr>
+		</tr>
+		</tr>
+	</table>
+</h1>
+</body>
+
+<script type="text/javascript">
+	function update(){
+var squad = [];
+	    squad.push(0);
+	$.getJSON( "board_op.php", function( data ) {
+	  var items = [];
+	  $.each( data, function( key, val ) {
+	  	console.log(val)
+	    squad.push(parseInt(val));
+	  });
+	$('#squad1').html(parseInt(squad[1]));
+	$('#squad2').html(parseInt(squad[2]));
+	$('#squad3').html(parseInt(squad[3]));
+	$('#squad4').html(parseInt(squad[4]));
+	$('#squad5').html(parseInt(squad[5]));
+	$('#squad6').html(parseInt(squad[6]));
+	$('#squad7').html(parseInt(squad[7]));
+	$('#squad8').html(parseInt(squad[8]));
+	$('#squad9').html(parseInt(squad[9]));
+	$('#squad10').html(parseInt(squad[10]));
+	$('#squad11').html(parseInt(squad[11]));
+	$('#squad12').html(parseInt(squad[12]));
+});
+	console.log(squad);
+}
+setInterval(update, 1000);
+</script>
+
+</html>
